@@ -1,7 +1,7 @@
 	<!-- Main navbar -->
 	<div class="navbar navbar-expand-md navbar-dark bg-indigo">
 		<div class="navbar-brand wmin-200">
-            <b style="font-size: 20px;margin:0;padding:0;color:white;"  class="d-inline-block">SIMABUS</b>
+            <b style="font-size: 20px;margin:0;padding:0;color:white;"  class="d-inline-block">APP</b>
 		</div>
 
 		<div class="d-md-none">

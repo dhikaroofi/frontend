@@ -19,11 +19,6 @@ class LoginController extends Controller
     }
 
 
-    // public function actLogout(Request $request){
-    //     $request->session()->flush();
-    //     return view('pages.login');
-    // }
-
     public function actLogin(Request $request) {
             $credentials = $this->validate($request, [
                 'username'  => 'required|min:3',

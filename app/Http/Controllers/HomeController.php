@@ -11,9 +11,6 @@ class HomeController extends Controller
     }
 
     public function index(Request $request){
-        if($request->session()->exists('jwt') ) {
-            return redirect('/');
-        }
         return view('pages.dashboard');
     }
 
