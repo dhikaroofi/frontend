@@ -42,7 +42,9 @@ var DatatableBasic = function() {
         });
 
         // Basic datatable
-        $('.datatable-basic').DataTable();
+        $('.datatable-basic').DataTable( {
+            "paging":   false,
+        } );
 
         // Alternative pagination
         $('.datatable-pagination').DataTable({

@@ -20,7 +20,7 @@ class AuthService extends BaseService{
                     "data"=>array()
                 );
             }
-            $tokenPayload = base64_decode($data["data"]["authorization"]["token"]);
+            $tokenPayload = $data["data"]["authorization"]["token"];
             return array(
                 "status"=>200,
                 "massage"=>"Succes",

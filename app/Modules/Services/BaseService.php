@@ -16,27 +16,25 @@ class BaseService{
 
     public function get($url,$payload){
         try {
-
-            $response = Http::withHeaders($this->header)->get($this->baseURL.$this->endpoint.$url, $payload);
-
+            $response = Http::withHeaders($this->header)->get($this->baseURL.$url);
             $data = json_decode($response->getBody()->getContents(),true);
             if ($response->status() != 200){
                 return array(
                     "status"=>$response->status(),
-                    "massage"=>$data['Status'],
-                    "data"=>array()
+                    "message"=>$data['Status'],
+                    "data"=>array("lists"=>array())
                 );
             }
             return array(
                 "status"=>200,
-                "massage"=>"Succes",
-                "data"=>$data['Data']
+                "message"=>"Succes",
+                "data"=>$data['data']
             );
         } catch (\Exception $th) {
             return array(
                 "status"=>500,
-                "massage"=>$th->getMessage(),
-                "data"=>array()
+                "message"=>$th->getMessage(),
+                "data"=>array("lists"=>array())
             );
         }
     }
@@ -48,19 +46,19 @@ class BaseService{
             if ($response->status() != 200){
                 return array(
                     "status"=>$response->status(),
-                    "massage"=>$data['Status'],
+                    "message"=>$data['Status'],
                     "data"=>array()
                 );
             }
             return array(
                 "status"=>200,
-                "massage"=>"Succes",
+                "message"=>"Succes",
                 "data"=>$data['Data']
             );
         } catch (\Exception $th) {
             return array(
                 "status"=>500,
-                "massage"=>$th->getMessage(),
+                "message"=>$th->getMessage(),
                 "data"=>array()
             );
         }
@@ -73,19 +71,19 @@ class BaseService{
             if ($response->status() != 200){
                 return array(
                     "status"=>$response->status(),
-                    "massage"=>$data['Status'],
+                    "message"=>$data['Status'],
                     "data"=>array()
                 );
             }
             return array(
                 "status"=>200,
-                "massage"=>"Succes",
+                "message"=>"Succes",
                 "data"=>$data['Data']
             );
         } catch (\Exception $th) {
             return array(
                 "status"=>500,
-                "massage"=>$th->getMessage(),
+                "message"=>$th->getMessage(),
                 "data"=>array()
             );
         }
@@ -98,19 +96,19 @@ class BaseService{
             if ($response->status() != 200){
                 return array(
                     "status"=>$response->status(),
-                    "massage"=>$data['Status'],
+                    "message"=>$data['Status'],
                     "data"=>array()
                 );
             }
             return array(
                 "status"=>200,
-                "massage"=>"Succes",
+                "message"=>"Succes",
                 "data"=>$data['Data']
             );
         } catch (\Exception $th) {
             return array(
                 "status"=>500,
-                "massage"=>$th->getMessage(),
+                "message"=>$th->getMessage(),
                 "data"=>array()
             );
         }

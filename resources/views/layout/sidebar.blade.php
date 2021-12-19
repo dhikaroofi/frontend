@@ -26,8 +26,7 @@
 
 					<div class="card-body p-0">
 						<ul class="nav nav-sidebar" data-nav-type="accordion">
-                            <li class="nav-item"><a href="/merchants" class="nav-link">Merchants</a></li>
-                            <li class="nav-item"><a href="/outlet" class="nav-link">Outlets</a></li>
+                            <li class="nav-item"><a href="/" class="nav-link">Merchants</a></li>
 						</ul>
 					</div>
 

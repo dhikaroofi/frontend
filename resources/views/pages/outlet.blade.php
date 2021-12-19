@@ -14,7 +14,7 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">List Merchants </h6>
+                <h6 class="card-title">List Outlet </h6>
             </div>
             <div class="card-body py-0">
                 <div class="row">
@@ -33,7 +33,7 @@
                     @foreach ($data['lists'] as $item)
                         <tr>
                             <td>{{ $loop->index+1 }}</td>
-                            <td>{{ Str::ucfirst($item['merchant_name']) }}</td>
+                            <td>{{ Str::ucfirst($item['outlet_name']) }}</td>
                             <td class="text-center">
                                 <div class="list-icons">
                                     <div class="dropdown">
@@ -41,11 +41,8 @@
                                             <i class="icon-menu9"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="{{ route('get.merchantReport',$item["id"]) }}">
-                                                {{ __('Lihat Omzet') }}
-                                            </a>
-                                            <a class="dropdown-item" href="{{ route('get.outletList',$item["id"]) }}">
-                                                {{ __('Lihat Outlet') }}
+                                            <a class="dropdown-item" href="{{ route('get.outletReport',$item["id"]) }}">
+                                                {{ __('Lihat Omzet Outlet') }}
                                             </a>
 
                                         </div>

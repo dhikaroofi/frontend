@@ -14,7 +14,7 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header header-elements-inline">
-                <h6 class="card-title">List Merchants </h6>
+                <h6 class="card-title">List Omzet Merchants </h6>
             </div>
             <div class="card-body py-0">
                 <div class="row">
@@ -25,8 +25,9 @@
                 <thead>
                     <tr>
                         <th width="5%">No</th>
-                        <th width="20%">Nama</th>
-                        <th width="5%" class="text-center">Actions</th>
+                        <th width="40%">Nama</th>
+                        <th width="30%" class="text-left">Omzet</th>
+                        <th width="30%" class="text-right">Tanggal</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,24 +35,8 @@
                         <tr>
                             <td>{{ $loop->index+1 }}</td>
                             <td>{{ Str::ucfirst($item['merchant_name']) }}</td>
-                            <td class="text-center">
-                                <div class="list-icons">
-                                    <div class="dropdown">
-                                        <a href="#" class="list-icons-item" data-toggle="dropdown">
-                                            <i class="icon-menu9"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="{{ route('get.merchantReport',$item["id"]) }}">
-                                                {{ __('Lihat Omzet') }}
-                                            </a>
-                                            <a class="dropdown-item" href="{{ route('get.outletList',$item["id"]) }}">
-                                                {{ __('Lihat Outlet') }}
-                                            </a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
+                            <td class="text-left">Rp. {{ number_format($item['omzet']) }}</td>
+                            <td class="text-right">{{ date("d F Y",strtotime( $item['date'])) }}</td>
                         </tr>
                     @endforeach
 

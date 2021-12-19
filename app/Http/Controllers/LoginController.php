@@ -11,6 +11,11 @@ class LoginController extends Controller
         $this->services = $services;
     }
 
+    public function actLogout(Request $request){
+        $request->session()->flush();
+        return view('pages.login');
+    }
+
     public function index(Request $request){
         if($request->session()->exists('jwt') ) {
             return redirect('/');
@@ -32,7 +37,7 @@ class LoginController extends Controller
             );
             $sendRequest = $this->services->login($data);
             if($sendRequest['status'] != 200){
-                return redirect('login')->with(['gagal' => $sendRequest['massage']]);
+                return redirect('login')->with(['gagal' => $sendRequest['message']]);
             }
             $request->session()->put($sendRequest["data"]);
             return redirect('/');
